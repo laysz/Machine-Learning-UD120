@@ -19,4 +19,19 @@ import pickle
 
 enron_data = pickle.load(open("../final_project/final_project_dataset.pkl", "r"))
 
+# print "The number of people is ", len(enron_data)
 
+
+print enron_data['COLWELL WESLEY']
+
+print enron_data
+#print enron_data['PRENTICE JAMES']
+# count = 0
+# for i in enron_data:
+#     if enron_data['Prentice James'] == 1:
+#         count += 1
+#
+#
+# print "number of poi is ", count
+# for key in i:
+#     print len(key)
