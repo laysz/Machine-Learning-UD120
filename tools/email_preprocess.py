@@ -48,6 +48,7 @@ def preprocess(words_file = "../tools/word_data.pkl", authors_file="../tools/ema
                                  stop_words='english')
     features_train_transformed = vectorizer.fit_transform(features_train)
     features_test_transformed  = vectorizer.transform(features_test)
+#    print "The number of features after transformation are ", len(features_train_transformed)
 
 
 
@@ -55,6 +56,9 @@ def preprocess(words_file = "../tools/word_data.pkl", authors_file="../tools/ema
     ### can be really computationally chewy as a result
     selector = SelectPercentile(f_classif, percentile=10)
     selector.fit(features_train_transformed, labels_train)
+
+#    print "The number of features after selector are ", len(selector)
+
     features_train_transformed = selector.transform(features_train_transformed).toarray()
     features_test_transformed  = selector.transform(features_test_transformed).toarray()
 
