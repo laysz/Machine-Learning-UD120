@@ -79,6 +79,9 @@ print "Projecting the input data on the eigenfaces orthonormal basis"
 t0 = time()
 X_train_pca = pca.transform(X_train)
 X_test_pca = pca.transform(X_test)
+
+#print 'the ratios are ', max(pca.explained_variance_ratio_)
+##print sorted(pca.explained_variance_ratio_, reverse=True)
 print "done in %0.3fs" % (time() - t0)
 
 
@@ -140,7 +143,7 @@ plot_gallery(X_test, prediction_titles, h, w)
 
 # plot the gallery of the most significative eigenfaces
 
-eigenface_titles = ["eigenface %d" % i for i in range(eigenfaces.shape[0])]
-plot_gallery(eigenfaces, eigenface_titles, h, w)
-
-pl.show()
+# eigenface_titles = ["eigenface %d" % i for i in range(eigenfaces.shape[0])]
+# plot_gallery(eigenfaces, eigenface_titles, h, w)
+#
+# pl.show()
